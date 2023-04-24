@@ -1,6 +1,8 @@
 # Regras para o 2º Sprint de AI & ChatBot:
 
-Baseado no rascunho inicial e nos feedbacks recebidos, implemente o seu chatbot.<br>
+Baseado no rascunho inicial e nos feedbacks recebidos, implemente o seu chatbot.
+
+<br>
 
 <b>Requisitos:</b>
 <ul>
