@@ -2,6 +2,7 @@ package models;
 
 import java.util.List;
 
+import enums.Plano;
 import enums.Status;
 
 public class Seguro {
@@ -11,7 +12,7 @@ public class Seguro {
     private int id;
     private Usuario usuario;
     private List<Bicicleta> bicicleta;
-    private String plano;
+    private List<Plano> planos;
     private Status status;
 
     //constructors
@@ -20,10 +21,34 @@ public class Seguro {
         this.usuario = usuario;
     }
 
+    //methods
+    public void mostraInfoSeguro() {
+        System.out.printf(
+            "ID: %d%n" +
+            "Dono do seguro: %s%n" +
+            "Bicicletas seguradas: %s%n" +
+            "Tipo de plano: %s%n" +
+            "Status do plano: %s%n",
+            this.getId(),
+            this.getUsuario().getNome(),
+            this.getBicicleta(),
+            this.getPlanos(),
+            this.getStatus()
+        );
+    }
+
     //getters and setters
+    
     public Usuario getUsuario() {
         return usuario;
     }
+    public List<Plano> getPlanos() {
+        return planos;
+    }
+    public void setPlanos(List<Plano> planos) {
+        this.planos = planos;
+    }
+
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
@@ -32,12 +57,6 @@ public class Seguro {
     }
     public void setBicicleta(List<Bicicleta> bicicleta) {
         this.bicicleta = bicicleta;
-    }
-    public String getPlano() {
-        return plano;
-    }
-    public void setPlano(String plano) {
-        this.plano = plano;
     }
     public Status getStatus() {
         return status;

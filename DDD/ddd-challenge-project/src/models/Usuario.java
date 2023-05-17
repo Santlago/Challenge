@@ -1,5 +1,7 @@
 package models;
 
+import java.util.List;
+
 public class Usuario extends Pessoa{
     
     //attributes
@@ -7,6 +9,7 @@ public class Usuario extends Pessoa{
     private int id;
     private String login;
     private int senha;
+    private List<Bicicleta> bicicletas;
 
     //constructors
     public Usuario(String login, int senha) {
@@ -18,10 +21,11 @@ public class Usuario extends Pessoa{
     }
 
     //methods
-    public void mostraInfo() {
+    public void mostraInfoConta() {
         System.out.printf(
             "ID: %d%n" +
             "Login: %s%n" +
+            "Bicicletas: %s%n" +
             "Nome: %s%n" +
             "Email: %s%n" +
             "Telefone: %s%n" +
@@ -34,6 +38,7 @@ public class Usuario extends Pessoa{
             "Genero: %s%n",
             this.getId(),
             this.getLogin(),
+            this.getBicicletas(),
             this.getNome(),
             this.getEmail(),
             this.getTelefone(),
@@ -50,11 +55,9 @@ public class Usuario extends Pessoa{
     public static int getNumeroContasAbertas() {
         return numeroContasAbertas;
     }
-
     public int getId() {
         return id;
     }
-
     public String getLogin() {
         return login;
     }
@@ -67,6 +70,10 @@ public class Usuario extends Pessoa{
     public void setSenha(int senha) {
         this.senha = senha;
     }
+    public List<Bicicleta> getBicicletas() {
+        return bicicletas;
+    }
+    
 
     
 }

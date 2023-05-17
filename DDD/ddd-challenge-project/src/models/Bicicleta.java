@@ -7,13 +7,21 @@ import java.awt.Color;
 public class Bicicleta {
     
     //attributes
+    private static int numeroBicicletas;
     private int id;
+    private Usuario donoBicicleta;
     private LocalDate anoFabricacao;
     private String tipo;
     private Color cor;
     private int numeroSerie;
-    private String status;
     private List<Reparos> reparos;
+
+    //constructors
+    public Bicicleta(Usuario usuario) {
+        Bicicleta.numeroBicicletas += 1;
+        this.id = Bicicleta.numeroBicicletas;
+        this.donoBicicleta = usuario;
+    }
 
     //getters and setters
     public int getId() {
@@ -25,8 +33,8 @@ public class Bicicleta {
     public LocalDate getAnoFabricacao() {
         return anoFabricacao;
     }
-    public void setAnoFabricacao(LocalDate anoFabricacao) {
-        this.anoFabricacao = anoFabricacao;
+    public void setAnoFabricacao(int i) {
+        this.anoFabricacao = i;
     }
     public String getTipo() {
         return tipo;
@@ -46,17 +54,18 @@ public class Bicicleta {
     public void setNumeroSerie(int numeroSerie) {
         this.numeroSerie = numeroSerie;
     }
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
     public List<Reparos> getReparos() {
         return reparos;
     }
     public void setReparos(List<Reparos> reparos) {
         this.reparos = reparos;
     }
+    public Usuario getDonoBicicleta() {
+        return donoBicicleta;
+    }
+    public void setDonoBicicleta(Usuario donoBicicleta) {
+        this.donoBicicleta = donoBicicleta;
+    }
+    
 
 }

@@ -6,17 +6,23 @@ import java.util.List;
 public class Reparos {
     
     //attributes
-    private LocalDate data;
+    private Bicicleta bicicleta;
+    private String data;
     private String tipo;
     private List<Pecas> pecas;
     private String observacoes;
     private double custoReparo;
 
+    //constructors
+    public Reparos(Bicicleta bicicleta) {
+        this.bicicleta = bicicleta;
+    }
+
     //getters and setters
-    public LocalDate getData() {
+    public String getData() {
         return data;
     }
-    public void setData(LocalDate data) {
+    public void setData(String data) {
         this.data = data;
     }
     public String getTipo() {
