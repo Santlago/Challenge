@@ -1,28 +1,39 @@
 package models;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import enums.Resolucao;
 
 public class Foto {
     
-    //attributes
-    private LocalDate data;
-    private int quantidade;
+    // attributes
+    private static int quantidadeFotos;
+    private Usuario usuario;
+    private Bicicleta bicicleta;
+    private LocalDateTime data;
     private Resolucao resolucao;
 
-    //getters and setters
-    public LocalDate getData() {
+    // methods
+    public Foto(Usuario usuario, Bicicleta bicicleta, Resolucao resolucao) {
+        Foto.quantidadeFotos += 1;
+        this.usuario = usuario;
+        this.bicicleta = bicicleta;
+        this.data = LocalDateTime.now();
+        this.resolucao = resolucao;
+    }
+
+    public void mostraInfoFoto() {
+        System.out.printf("%n----------------------------------Foto----------------------------------%n");
+        System.out.printf("Usuario: %s%n", this.usuario.getNome());
+        System.out.printf("Bicicleta: %s%n", this.bicicleta.getId());
+        System.out.printf("Horário que foi tirada: %s%n", this.data);
+        System.out.printf("Resolução: %s%n", this.resolucao);
+    }
+
+    // getters and setters
+    public LocalDateTime getData() {
         return data;
-    }
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-    public int getQuantidade() {
-        return quantidade;
-    }
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
     }
     public Resolucao getResolucao() {
         return resolucao;

@@ -20,23 +20,19 @@ public class Seguro {
     public Seguro(Usuario usuario) {
         id = Seguro.numeroSegurosAbertos + 1;
         this.usuario = usuario;
-        bicicletas = new ArrayList<>();
+        this.bicicletas = new ArrayList<>();
+        this.planos = new ArrayList<>();
+        this.status = Status.INATIVO;
     }
 
     //methods
     public void mostraInfoSeguro() {
-        System.out.printf(
-            "ID: %d%n" +
-            "Dono do seguro: %s%n" +
-            "Bicicletas seguradas: %s%n" +
-            "Tipo de plano: %s%n" +
-            "Status do plano: %s%n",
-            this.getId(),
-            this.getUsuario().getNome(),
-            this.getBicicleta().size(),
-            this.getPlanos(),
-            this.getStatus()
-        );
+        System.out.printf("%n----------------------------------Seguro----------------------------------%n");
+        System.out.printf("ID: %d%n", this.getId());
+        System.out.printf("Dono do seguro: %s%n", this.getUsuario().getNome());
+        System.out.printf("Bicicletas seguradas: %d%n", this.getBicicleta().size());
+        System.out.printf("Tipo de plano: %s%n", this.getPlanos());
+        System.out.printf("Status do plano: %s%n", this.getStatus());
     }
 
     public void adicionaBicicletaSeguro(Bicicleta bicicleta) {
@@ -53,8 +49,8 @@ public class Seguro {
     public List<Plano> getPlanos() {
         return planos;
     }
-    public void setPlanos(List<Plano> planos) {
-        this.planos = planos;
+    public void adicionaPlanos(Plano plano) {
+        this.planos.add(plano);
     }
 
     public void setUsuario(Usuario usuario) {

@@ -25,33 +25,20 @@ public class Usuario extends Pessoa{
 
     //methods    
     public void mostraInfoConta() {
-        System.out.printf(
-            "ID: %d%n" +
-            "Login: %s%n" +
-            "Quantidade de Bicicletas: %s%n" +
-            "Nome: %s%n" +
-            "Email: %s%n" +
-            "Telefone: %s%n" +
-            "Endereco: %n" +
-            "   %s%n" +
-            "   %s%n" +
-            "   %s%n" +
-            "   %s%n" +
-            "Idade: %d%n" +
-            "Genero: %s%n",
-            this.getId(),
-            this.getLogin(),
-            this.getBicicletas().size(),
-            this.getNome(),
-            this.getEmail(),
-            this.getTelefone(),
-            this.getEndereco().getRua(),
-            this.getEndereco().getNumero(),
-            this.getEndereco().getCidade(),
-            this.getEndereco().getEstado(),
-            this.getIdade(),
-            this.getGenero()
-        );
+        System.out.printf("%n----------------------------------Conta----------------------------------%n");
+        System.out.printf("ID: %d%n", this.getId());
+        System.out.printf("Login: %s%n", this.getLogin());
+        System.out.printf("Quantidade de Bicicletas: %d%n", this.getBicicletas().size());
+        System.out.printf("Nome: %s%n", this.getNome());
+        System.out.printf("Email: %s%n", this.getEmail());
+        System.out.printf("Telefone: %s%n", this.getTelefone());
+        System.out.println("Endereco:");
+        System.out.printf("   Rua: %s%n", this.getEndereco().getRua());
+        System.out.printf("   Numero: %d%n", this.getEndereco().getNumero());
+        System.out.printf("   Cidade: %s%n", this.getEndereco().getCidade());
+        System.out.printf("   Estado: %s%n", this.getEndereco().getEstado());
+        System.out.printf("Idade: %d%n", this.getIdade());
+        System.out.printf("Genero: %s%n", this.getGenero());
     }
 
     public void adicionaBicicletaConta(Bicicleta bicicleta) {
