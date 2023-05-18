@@ -1,10 +1,14 @@
 package models;
 
-public class Pecas {
+public class Peca {
     
     //attributes
     private String nome;
-    private double preco;
+
+    //constructors
+    public Peca(String nome) {
+        this.nome = nome;
+    }
 
     //getters and setters
     public String getNome() {
@@ -13,12 +17,5 @@ public class Pecas {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public double getPreco() {
-        return preco;
-    }
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
     
 }

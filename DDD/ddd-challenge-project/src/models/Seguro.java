@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import enums.Plano;
@@ -11,7 +12,7 @@ public class Seguro {
     private static int numeroSegurosAbertos;
     private int id;
     private Usuario usuario;
-    private List<Bicicleta> bicicleta;
+    private List<Bicicleta> bicicletas;
     private List<Plano> planos;
     private Status status;
 
@@ -19,6 +20,7 @@ public class Seguro {
     public Seguro(Usuario usuario) {
         id = Seguro.numeroSegurosAbertos + 1;
         this.usuario = usuario;
+        bicicletas = new ArrayList<>();
     }
 
     //methods
@@ -31,14 +33,20 @@ public class Seguro {
             "Status do plano: %s%n",
             this.getId(),
             this.getUsuario().getNome(),
-            this.getBicicleta(),
+            this.getBicicleta().size(),
             this.getPlanos(),
             this.getStatus()
         );
     }
 
+    public void adicionaBicicletaSeguro(Bicicleta bicicleta) {
+        this.bicicletas.add(bicicleta);
+    }
+    public void removeBicicletaSeguro(Bicicleta bicicleta) {
+        this.bicicletas.remove(this.bicicletas.indexOf(bicicleta));
+    }
+
     //getters and setters
-    
     public Usuario getUsuario() {
         return usuario;
     }
@@ -53,10 +61,10 @@ public class Seguro {
         this.usuario = usuario;
     }
     public List<Bicicleta> getBicicleta() {
-        return bicicleta;
+        return this.bicicletas;
     }
     public void setBicicleta(List<Bicicleta> bicicleta) {
-        this.bicicleta = bicicleta;
+        this.bicicletas = bicicleta;
     }
     public Status getStatus() {
         return status;

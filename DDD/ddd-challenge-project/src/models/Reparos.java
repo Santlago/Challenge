@@ -1,6 +1,5 @@
 package models;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class Reparos {
@@ -9,7 +8,7 @@ public class Reparos {
     private Bicicleta bicicleta;
     private String data;
     private String tipo;
-    private List<Pecas> pecas;
+    private List<Peca> pecas;
     private String observacoes;
     private double custoReparo;
 
@@ -31,10 +30,10 @@ public class Reparos {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    public List<Pecas> getPecas() {
+    public List<Peca> getPecas() {
         return pecas;
     }
-    public void setPecas(List<Pecas> pecas) {
+    public void setPecas(List<Peca> pecas) {
         this.pecas = pecas;
     }
     public String getObservacoes() {

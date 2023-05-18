@@ -10,7 +10,7 @@ public class Bicicleta {
     private static int numeroBicicletas;
     private int id;
     private Usuario donoBicicleta;
-    private LocalDate anoFabricacao;
+    private int anoFabricacao;
     private String tipo;
     private Color cor;
     private int numeroSerie;
@@ -30,7 +30,7 @@ public class Bicicleta {
     public void setId(int id) {
         this.id = id;
     }
-    public LocalDate getAnoFabricacao() {
+    public int getAnoFabricacao() {
         return anoFabricacao;
     }
     public void setAnoFabricacao(int i) {

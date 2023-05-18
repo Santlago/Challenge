@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario extends Pessoa{
@@ -9,6 +10,7 @@ public class Usuario extends Pessoa{
     private int id;
     private String login;
     private int senha;
+    private int quantidadeBicicletas;
     private List<Bicicleta> bicicletas;
 
     //constructors
@@ -18,14 +20,15 @@ public class Usuario extends Pessoa{
         this.id = Usuario.numeroContasAbertas;
         this.login = login;
         this.senha = senha;
+        bicicletas = new ArrayList<>();
     }
 
-    //methods
+    //methods    
     public void mostraInfoConta() {
         System.out.printf(
             "ID: %d%n" +
             "Login: %s%n" +
-            "Bicicletas: %s%n" +
+            "Quantidade de Bicicletas: %s%n" +
             "Nome: %s%n" +
             "Email: %s%n" +
             "Telefone: %s%n" +
@@ -38,7 +41,7 @@ public class Usuario extends Pessoa{
             "Genero: %s%n",
             this.getId(),
             this.getLogin(),
-            this.getBicicletas(),
+            this.getBicicletas().size(),
             this.getNome(),
             this.getEmail(),
             this.getTelefone(),
@@ -49,6 +52,13 @@ public class Usuario extends Pessoa{
             this.getIdade(),
             this.getGenero()
         );
+    }
+
+    public void adicionaBicicletaConta(Bicicleta bicicleta) {
+        this.bicicletas.add(bicicleta);
+    }
+    public void removeBicicletaConta(Bicicleta bicicleta) {
+        this.bicicletas.remove(this.bicicletas.indexOf(bicicleta));
     }
 
     //getters and setters
@@ -73,7 +83,5 @@ public class Usuario extends Pessoa{
     public List<Bicicleta> getBicicletas() {
         return bicicletas;
     }
-    
-
     
 }
