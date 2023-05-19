@@ -1,20 +1,47 @@
 package models;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sinistro {
     
-    //attributes
+    // attributes
+    private static int quantidadeSinistros;
     private int id;
+    private Usuario usuario;
     private String tipo;
     private String descricao;
     private Bicicleta bicicleta;
-    private LocalDate data;
-    private List<Pessoa> pessoa;
-    private Foto foto;
+    private String data;
+    private List<Pessoa> pessoas;
 
-    //getters and setters
+    // constructors
+    public Sinistro(Usuario usuario) {
+        Sinistro.quantidadeSinistros += 1;
+        this.id = Sinistro.quantidadeSinistros;
+        this.usuario = usuario;
+        this.pessoas = new ArrayList<>();
+    }
+
+    // methods
+    public void mostraInfoSinistro() {
+        System.out.printf("%n----------------------------------Sinistro----------------------------------%n");
+        System.out.printf("ID: %d%n", this.getId());
+        System.out.printf("Dono do seguro: %s%n", this.getUsuario().getNome());
+        System.out.printf("Tipo: %s%n", this.getTipo());
+        System.out.printf("Descrição: %s%n", this.getDescricao());
+        System.out.printf("Bicicleta: %s%n", this.getBicicleta());
+        System.out.printf("Data: %s%n", this.getData());
+        System.out.printf("Pessoas envolvidas: %s%n", this.getPessoa());
+    }
+
+    // methods
+    public void adicionaPessoa(Pessoa pessoa) {
+        this.pessoas.add(pessoa);
+    }
+
+    // getters and setters
     public int getId() {
         return id;
     }
@@ -39,24 +66,24 @@ public class Sinistro {
     public void setBicicleta(Bicicleta bicicleta) {
         this.bicicleta = bicicleta;
     }
-    public LocalDate getData() {
+    public String getData() {
         return data;
     }
-    public void setData(LocalDate data) {
+    public void setData(String data) {
         this.data = data;
     }
     public List<Pessoa> getPessoa() {
-        return pessoa;
+        return pessoas;
     }
     public void setPessoa(List<Pessoa> pessoa) {
-        this.pessoa = pessoa;
+        this.pessoas = pessoa;
     }
-    public Foto getFoto() {
-        return foto;
+    public Usuario getUsuario() {
+        return usuario;
     }
-    public void setFoto(Foto foto) {
-        this.foto = foto;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
-
+    
     
 }

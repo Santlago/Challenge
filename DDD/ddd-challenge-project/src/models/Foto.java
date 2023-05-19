@@ -9,20 +9,23 @@ public class Foto {
     
     // attributes
     private static int quantidadeFotos;
+    private int id;
     private Usuario usuario;
     private Bicicleta bicicleta;
     private LocalDateTime data;
     private Resolucao resolucao;
 
-    // methods
+    // constructors
     public Foto(Usuario usuario, Bicicleta bicicleta, Resolucao resolucao) {
         Foto.quantidadeFotos += 1;
+        this.id = Foto.quantidadeFotos;
         this.usuario = usuario;
         this.bicicleta = bicicleta;
         this.data = LocalDateTime.now();
         this.resolucao = resolucao;
     }
 
+    // methods
     public void mostraInfoFoto() {
         System.out.printf("%n----------------------------------Foto----------------------------------%n");
         System.out.printf("Usuario: %s%n", this.usuario.getNome());

@@ -23,6 +23,11 @@ public class Bicicleta {
         this.donoBicicleta = usuario;
     }
 
+    // methods
+    public void adidionaFoto(Foto foto) {
+        this.fotos.add(foto);
+    }
+
     //getters and setters
     public int getId() {
         return id;
@@ -66,6 +71,5 @@ public class Bicicleta {
     public void setDonoBicicleta(Usuario donoBicicleta) {
         this.donoBicicleta = donoBicicleta;
     }
-    
 
 }

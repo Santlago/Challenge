@@ -14,7 +14,8 @@ public class Usuario extends Pessoa{
     private List<Bicicleta> bicicletas;
 
     //constructors
-    public Usuario(String login, int senha) {
+    public Usuario(String login, int senha, String nome, String cpf) {
+        super(nome, cpf);
         Usuario.numeroContasAbertas += 1;
         this.setEndereco(null);
         this.id = Usuario.numeroContasAbertas;

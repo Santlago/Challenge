@@ -2,7 +2,7 @@ package models;
 
 public class Pessoa {
 
-    //attributes
+    // attributes
     private String nome;
     private String cpf;
     private String email;
@@ -11,7 +11,13 @@ public class Pessoa {
     private int idade;
     private String genero;
 
-    //getters and setters
+    // constructors
+    public Pessoa(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
+    // getters and setters
     public String getNome() {
         return nome;
     }
