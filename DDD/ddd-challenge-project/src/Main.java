@@ -54,8 +54,11 @@ public class Main {
         reparo1Bicicleta1Joao.setTipo("Troca de freios");
         Peca peca1Reparo1Bicicleta1Joao = new Peca("Freio dianteiro");
         Peca peca2Reparo1Bicicleta1Joao = new Peca("Freio traseiro");
+        reparo1Bicicleta1Joao.adicionaPecas(peca1Reparo1Bicicleta1Joao);
+        reparo1Bicicleta1Joao.adicionaPecas(peca2Reparo1Bicicleta1Joao);
         reparo1Bicicleta1Joao.setObservacoes("Foi colocado um freio de outra marca");
         reparo1Bicicleta1Joao.setCustoReparo(320);
+        bicicleta1Joao.adicionaReparo(reparo1Bicicleta1Joao);
 
         // Creating insurance for João
         Seguro seguroJoao = new Seguro(joao);
@@ -99,5 +102,18 @@ public class Main {
 
         // Showing João's sinister avaliation information
         avaliacaoSinistroJoao.mostraInfoAvaliacao();
+
+        // Adding new repair for João's bike
+        Reparos novoReparoBicicletaJoao = new Reparos(bicicleta1Joao);
+        novoReparoBicicletaJoao.setData("11/11/2021");
+        novoReparoBicicletaJoao.setTipo("Troca de pneu");
+        Peca peca3Joao = new Peca("Pneu");
+        novoReparoBicicletaJoao.adicionaPecas(peca3Joao);
+        novoReparoBicicletaJoao.setObservacoes("Pneu rasgou após acidente leve");
+        novoReparoBicicletaJoao.setCustoReparo(350);
+        novoReparoBicicletaJoao.mostraInfoReparo();
+
+        // Adding new reparir do bicycle's repair history
+        bicicleta1Joao.adicionaReparo(novoReparoBicicletaJoao);
     }
 }

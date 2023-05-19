@@ -36,7 +36,6 @@ public class Sinistro {
         System.out.printf("Pessoas envolvidas: %s%n", this.getPessoa());
     }
 
-    // methods
     public void adicionaPessoa(Pessoa pessoa) {
         this.pessoas.add(pessoa);
     }

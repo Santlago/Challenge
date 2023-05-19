@@ -8,8 +8,8 @@ import enums.Status;
 public class SistemaVerificador {
     
     // attributes
-    private List<Foto> fotos;
     private String url;
+    private List<Foto> fotos;
 
     // methods
     public SistemaVerificador(Seguro seguro) {

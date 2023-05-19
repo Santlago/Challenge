@@ -10,7 +10,6 @@ public class Usuario extends Pessoa{
     private int id;
     private String login;
     private int senha;
-    private int quantidadeBicicletas;
     private List<Bicicleta> bicicletas;
 
     //constructors

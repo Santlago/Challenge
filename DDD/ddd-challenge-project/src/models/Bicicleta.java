@@ -1,12 +1,12 @@
 package models;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.awt.Color;
 
 public class Bicicleta {
     
-    //attributes
+    // attributes
     private static int numeroBicicletas;
     private int id;
     private Usuario donoBicicleta;
@@ -16,16 +16,17 @@ public class Bicicleta {
     private int numeroSerie;
     private List<Reparos> reparos;
 
-    //constructors
+    // constructors
     public Bicicleta(Usuario usuario) {
         Bicicleta.numeroBicicletas += 1;
         this.id = Bicicleta.numeroBicicletas;
         this.donoBicicleta = usuario;
+        this.reparos = new ArrayList<>();
     }
 
     // methods
-    public void adidionaFoto(Foto foto) {
-        this.fotos.add(foto);
+    public void adicionaReparo(Reparos reparos) {
+        this.reparos.add(reparos);
     }
 
     //getters and setters

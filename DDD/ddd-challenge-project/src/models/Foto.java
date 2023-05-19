@@ -44,6 +44,12 @@ public class Foto {
     public void setResolucao(Resolucao resolucao) {
         this.resolucao = resolucao;
     }
-
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     
 }
