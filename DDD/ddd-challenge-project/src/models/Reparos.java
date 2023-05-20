@@ -21,7 +21,7 @@ public class Reparos {
     public void mostraInfoReparo() {
         System.out.printf("%n----------------------------------Novo Reparo----------------------------------%n");
         System.out.printf("Data: %s%n", this.getData());
-        System.out.printf("Tipo:: %s%n", this.getTipo());
+        System.out.printf("Tipo: %s%n", this.getTipo());
         System.out.printf("Pecas reparadas/substituídas: %s%n", this.getPecas());
         System.out.printf("Observações: %s%n", this.getObservacoes());
         System.out.printf("Cursto do reparo: %s%n", this.getCustoReparo());

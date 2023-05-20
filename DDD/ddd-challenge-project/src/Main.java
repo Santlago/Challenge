@@ -111,9 +111,14 @@ public class Main {
         novoReparoBicicletaJoao.adicionaPecas(peca3Joao);
         novoReparoBicicletaJoao.setObservacoes("Pneu rasgou após acidente leve");
         novoReparoBicicletaJoao.setCustoReparo(350);
+
+        // Showing João's bicycle repair
         novoReparoBicicletaJoao.mostraInfoReparo();
 
-        // Adding new reparir do bicycle's repair history
+        // Adding new repair do bicycle's repair history
         bicicleta1Joao.adicionaReparo(novoReparoBicicletaJoao);
+
+        // Showing new João's bicycle repair history
+        bicicleta1Joao.mostraHistoricoReparos();
     }
 }

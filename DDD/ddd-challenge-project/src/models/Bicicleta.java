@@ -28,6 +28,10 @@ public class Bicicleta {
     public void adicionaReparo(Reparos reparos) {
         this.reparos.add(reparos);
     }
+    public void mostraHistoricoReparos() {
+        System.out.printf("%n----------------------------------Novo Histórico de Reparos----------------------------------%n");
+        System.out.printf("Histórico de reparos: %s%n", this.getReparos());
+    }
 
     //getters and setters
     public int getId() {

@@ -31,7 +31,7 @@ public class Sinistro {
         System.out.printf("Dono do seguro: %s%n", this.getUsuario().getNome());
         System.out.printf("Tipo: %s%n", this.getTipo());
         System.out.printf("Descrição: %s%n", this.getDescricao());
-        System.out.printf("Bicicleta: %s%n", this.getBicicleta());
+        System.out.printf("Bicicleta: %s%n", this.getBicicleta().getId());
         System.out.printf("Data: %s%n", this.getData());
         System.out.printf("Pessoas envolvidas: %s%n", this.getPessoa());
     }
